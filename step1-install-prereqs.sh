@@ -1,13 +1,17 @@
 #!/bin/bash
 
-echo "== more debug"
-find /usr/local/bin -type f
-
 echo "== npm in the beginning"
 which npm
+which node
+which nodejs
 npm --version
+node --version
+nodejs --version
 npm uninstall -g yarn
 hash -r
+
+echo "== more debug"
+find /usr/local/bin -type f
 
 NODE_MAJOR=20  #major version of node to install
 
