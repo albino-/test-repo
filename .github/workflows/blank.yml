@@ -36,4 +36,4 @@ jobs:
         run: sudo ./step2-install-pre-reqs.sh
 
       - name: step3
-        run: sudo ./step3-build-joplin.sh
+        run: ./step3-build-joplin.sh
