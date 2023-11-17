@@ -7,11 +7,14 @@ which nodejs
 npm --version
 node --version
 nodejs --version
-npm uninstall -g yarn
-hash -r
 
 echo "== more debug"
-find /usr/local/bin -type f
+find /usr/local/bin -type f | sort
+
+echo "== lets remove"
+npm uninstall -g yarn
+rm /usr/local/node
+hash -r
 
 NODE_MAJOR=20  #major version of node to install
 
