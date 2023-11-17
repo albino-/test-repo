@@ -53,3 +53,8 @@ yarn set version '3.6.0'
 echo "== yarn version after trying to change version"
 which yarn
 yarn --version
+
+echo "== more debug"
+find /usr/local -type f
+echo "break break"
+find /usr/local/bin -type f
