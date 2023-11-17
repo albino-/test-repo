@@ -30,10 +30,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: step1
-        run: sudo ./step1-install-nodejs.sh
+        run: sudo ./step1-install-prereqs.sh
 
       - name: step2
-        run: sudo ./step2-install-pre-reqs.sh
-
-      - name: step3
-        run: ./step3-build-joplin.sh
+        run: ./step2-build-joplin.sh
