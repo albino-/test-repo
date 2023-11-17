@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "== npm in the beginning"
+dpkg --list | grep nodejs
 which npm
 npm --version
 
