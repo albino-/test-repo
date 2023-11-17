@@ -33,11 +33,11 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+      #- name: Setup tmate session
+      #  uses: mxschmitt/action-tmate@v3
 
       - name: step1
-        run: sudo ./step1-install-prereqs.sh
+        run: sudo ./step1-v2.sh
 
       - name: step2
         run: ./step2-build-joplin.sh
