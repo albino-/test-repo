@@ -1,9 +1,16 @@
 #!/bin/bash
 
+echo "== node path"
 which node
-which npm
+echo "== node version"
 node --version
 
+echo "== npm path"
+which npm
+echo "== npm version"
+npm --version
+
+echo
 echo "== yarn change version"
 corepack enable
 #yarn set version '3.x.x'
