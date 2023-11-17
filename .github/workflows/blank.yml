@@ -26,15 +26,15 @@ jobs:
 
     steps:
       - name: checkout
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: setup nodejs
-      - uses: actions/setup-node@v3
+        uses: actions/setup-node@v3
         with:
           node-version: '20'
 
       - name: Setup tmate session
-      - uses: mxschmitt/action-tmate@v3
+        uses: mxschmitt/action-tmate@v3
 
       - name: step1
         run: sudo ./step1-install-prereqs.sh
