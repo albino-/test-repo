@@ -22,10 +22,15 @@ export DPKG_ARCH="$(dpkg --print-architecture)"
 
 echo "deb [signed-by=/etc/apt/keyrings/nodesource.asc arch=${DPKG_ARCH}] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" > /etc/apt/sources.list.d/nodesource.list
 
-nodejs --version
-yarn --version
 
 apt update
 apt --yes install nodejs
+
+
+echo "== yarn version before trying to change version"
+yarn --version
 corepack enable
 yarn set version '3.x'
+
+echo "== yarn version after trying to change version"
+yarn --version
