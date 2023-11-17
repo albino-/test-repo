@@ -12,6 +12,9 @@ which npm
 echo "== npm version"
 npm --version
 
+echo "== PATH"
+echo $PATH
+
 echo
 echo "== yarn change version"
 corepack enable
