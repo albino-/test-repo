@@ -36,6 +36,9 @@ jobs:
       #- name: Setup tmate session
       #  uses: mxschmitt/action-tmate@v3
 
+      - name: modify path
+        run: echo "/opt/hostedtoolcache/node/20.9.0/x64/bin/" >> $GITHUB_PATH
+
       - name: step1
         run: sudo ./step1-v2.sh
 
