@@ -1,5 +1,7 @@
 #!/bin/bash
 
+hash -r
+
 echo "== node path"
 which node
 echo "== node version"
