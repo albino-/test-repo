@@ -25,7 +25,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: checkout
+      - uses: actions/checkout@v4
+
+      - name: setup nodejs
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
       - name: Setup tmate session
       - uses: mxschmitt/action-tmate@v3
@@ -35,5 +41,3 @@ jobs:
 
       - name: step2
         run: ./step2-build-joplin.sh
-
-
