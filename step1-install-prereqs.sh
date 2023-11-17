@@ -4,6 +4,7 @@ echo "== npm in the beginning"
 which npm
 npm --version
 npm uninstall -g yarn
+hash -r
 
 NODE_MAJOR=20  #major version of node to install
 
@@ -45,7 +46,8 @@ yarn --version
 
 echo "== yarn change version"
 corepack enable
-yarn set version '3.x.x'
+#yarn set version '3.x.x'
+yarn set version '3.x'
 
 echo "== yarn version after trying to change version"
 which yarn
