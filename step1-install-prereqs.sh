@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "== npm in the beginning"
+which npm
+npm --version
+
 NODE_MAJOR=20  #major version of node to install
 
 if [[ "${EUID}" -ne 0 ]]; then
@@ -25,6 +29,10 @@ echo "deb [signed-by=/etc/apt/keyrings/nodesource.asc arch=${DPKG_ARCH}] https:/
 
 apt update
 apt --yes install nodejs
+
+echo "== npm after noejs install"
+which npm
+npm --version
 
 echo "== where does yarn come from?"
 dpkg --list | grep yarn
