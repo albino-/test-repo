@@ -28,9 +28,13 @@ apt --yes install nodejs
 
 
 echo "== yarn version before trying to change version"
+which yarn
 yarn --version
+
+echo "== yarn change version"
 corepack enable
-yarn set version '3.x'
+yarn set version '3.x.x'
 
 echo "== yarn version after trying to change version"
+which yarn
 yarn --version
