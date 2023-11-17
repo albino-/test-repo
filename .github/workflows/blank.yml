@@ -29,10 +29,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
       - name: step1
         run: sudo ./step1-install-nodejs.sh
 
-      # Runs a set of commands using the runners shell
       - name: step2
         run: sudo ./step2-install-pre-reqs.sh
+
+      - name: step3
+        run: sudo ./step3-build-joplin.sh
