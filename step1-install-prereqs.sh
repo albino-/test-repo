@@ -26,6 +26,8 @@ echo "deb [signed-by=/etc/apt/keyrings/nodesource.asc arch=${DPKG_ARCH}] https:/
 apt update
 apt --yes install nodejs
 
+echo "== debug this buddy"
+dpkg --list | grep yarn
 
 echo "== yarn version before trying to change version"
 which yarn
