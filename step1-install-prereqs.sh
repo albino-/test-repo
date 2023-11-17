@@ -1,9 +1,9 @@
 #!/bin/bash
 
 echo "== npm in the beginning"
-dpkg --list | grep nodejs
 which npm
 npm --version
+npm uninstall -g yarn
 
 NODE_MAJOR=20  #major version of node to install
 
