@@ -12,8 +12,5 @@ if [[ ! -f "/etc/apt/apt.conf.d/99localpref" ]]; then
 	echo 'APT::Install-Suggests "0";' >> /etc/apt/apt.conf.d/99localpref
 fi
 
-apt update
-apt --yes install python3 ca-certificates curl wget
-
 #install yarn
-npm install --global yarn
+corepack enable

@@ -47,6 +47,8 @@ cp --parents -r "packages/server" ../build/
 cd ../build
 
 echo "== Build joplin using yarn"
+yarn set version stable
+yarn install
 yarn config set --home enableTelemetry 0
 BUILD_SEQUENCIAL=1 yarn install --inline-builds \
     && yarn cache clean \
