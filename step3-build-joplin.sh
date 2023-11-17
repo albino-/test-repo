@@ -47,7 +47,8 @@ cp --parents -r "packages/server" ../build/
 cd ../build
 
 echo "== Build joplin using yarn"
-yarn set version 3.6.0
+#yarn set version 3.6.0
+yarn set version '3.x'
 yarn --version
 yarn config set --home enableTelemetry 0
 BUILD_SEQUENCIAL=1 yarn install --inline-builds \
