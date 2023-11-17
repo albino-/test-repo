@@ -13,7 +13,7 @@ find /usr/local/bin -type f | sort
 
 echo "== lets remove"
 npm uninstall -g yarn
-rm /usr/local/node
+rm /usr/local/bin/node
 hash -r
 
 NODE_MAJOR=20  #major version of node to install
