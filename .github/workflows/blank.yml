@@ -35,8 +35,5 @@ jobs:
       - name: build joplin server
         run: ./build-joplin-server.sh
 
-      - name: detect dockerfile changes
-        run: ./detect-dockerfile-changes.sh
-
       #- name: Setup tmate session
       #  uses: mxschmitt/action-tmate@v3

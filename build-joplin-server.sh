@@ -17,6 +17,10 @@ curl -s -L -o "${joplin_targz}" "${joplin_release_dl}"
 tar xf "${joplin_targz}"
 rm "${joplin_targz}"
 
+cd "${joplin_repo}"
+../detect-dockerfile-changes.sh "${joplin_release}" Dockerfile.server
+cd -
+
 joplin_repo=$(ls -1)
 mkdir build
 
