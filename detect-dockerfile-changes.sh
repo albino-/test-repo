@@ -22,9 +22,6 @@ if [[ ! -f "${docker_file}" ]]; then
 	exit 1
 fi
 
-apt update
-apt --yes install coreutils jq
-
 digest=$(sha384sum "${dockerfile}" | cut -f1 -d' ')
 
 if [[ -z "${digest}" -a "${#digest}" -ne 96 ]]; then

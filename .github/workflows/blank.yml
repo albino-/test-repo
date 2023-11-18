@@ -32,6 +32,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: pre-reqs
+        run: sudo ./pre-reqs.sh
+
       - name: build joplin server
         run: ./build-joplin-server.sh
 
