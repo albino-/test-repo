@@ -37,7 +37,7 @@ jobs:
       #  uses: mxschmitt/action-tmate@v3
 
       - name: modify path
-        run: echo "/opt/hostedtoolcache/node/20.9.0/x64/bin/" >> $GITHUB_PATH
+        run: sudo echo "/opt/hostedtoolcache/node/20.9.0/x64/bin/" >> $GITHUB_PATH
         shell: bash
 
       - name: step1
