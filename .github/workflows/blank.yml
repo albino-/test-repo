@@ -7,8 +7,8 @@ on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
-#  pull_request:
-#    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -17,7 +17,6 @@ defaults:
   run:
     working-directory: .
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   build-joplin-release:
@@ -35,24 +34,6 @@ jobs:
 
       - name: build joplin server
         run: ./build-joplin-server.sh
-
-      #- name: echo path
-      #  run: ./echo-path.sh
-
-      #- name: sudo echo path
-      #  run: sudo ./echo-path.sh
-
-      #- name: modify path
-      #  run: sudo echo "/opt/hostedtoolcache/node/20.9.0/x64/bin/" >> $GITHUB_PATH
-      #  shell: bash
-
-      #- name: step1
-      #  #run: sudo ./step1-v2.sh
-      #  run: sudo env "PATH=$PATH" ./step1-v2.sh
-
-      #- name: step2
-      #  run: ./step2-v2.sh
-
 
       #- name: Setup tmate session
       #  uses: mxschmitt/action-tmate@v3
