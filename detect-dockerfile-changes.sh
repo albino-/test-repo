@@ -22,7 +22,7 @@ if [[ ! -f "${docker_file}" ]]; then
 	exit 1
 fi
 
-digest=$(sha384sum "${dockerfile}" | cut -f1 -d' ')
+digest=$(sha384sum "${docker_file}" | cut -f1 -d' ')
 
 if [[ -z "${digest}" ]] || [[ "${#digest}" -ne 96 ]]; then
 	echo "Unable to get digest for Docker file: ${docker_file}.  Exiting"
