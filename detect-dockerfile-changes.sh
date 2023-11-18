@@ -24,7 +24,7 @@ fi
 
 digest=$(sha384sum "${dockerfile}" | cut -f1 -d' ')
 
-if [[ -z "${digest}" -a "${#digest}" -ne 96 ]]; then
+if [[ -z "${digest}" ]] || [[ "${#digest}" -ne 96 ]]; then
 	echo "Unable to get digest for Docker file: ${docker_file}.  Exiting"
 	exit 1
 fi
