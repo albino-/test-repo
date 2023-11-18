@@ -16,15 +16,14 @@ cd build-joplin
 curl -s -L -o "${joplin_targz}" "${joplin_release_dl}"
 tar xf "${joplin_targz}"
 rm "${joplin_targz}"
+joplin_repo=$(ls -1)
 
 cd "${joplin_repo}"
 ../detect-dockerfile-changes.sh "${joplin_release}" Dockerfile.server
 cd -
 
-joplin_repo=$(ls -1)
-mkdir build
-
 #follow docker file as closely as possible from upstream
+mkdir build
 echo "== Copy in all the files from the source tar.gz"
 cd "${joplin_repo}"
 cp --parents -r ".yarn/plugins" ../build/
