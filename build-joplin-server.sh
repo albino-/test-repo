@@ -19,7 +19,7 @@ rm "${joplin_targz}"
 joplin_repo=$(ls -1)
 
 cd "${joplin_repo}"
-../detect-dockerfile-changes.sh "${joplin_release}" Dockerfile.server
+../../detect-dockerfile-changes.sh "${joplin_release}" Dockerfile.server
 cd -
 
 #follow docker file as closely as possible from upstream
