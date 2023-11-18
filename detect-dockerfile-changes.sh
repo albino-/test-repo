@@ -43,3 +43,9 @@ mv digest-next.json "${joplin_digest_file}"
 d=$(date +%Y%m%d_%H%M%S)
 jq --arg "${joplin_ver}" "${d}" '. += $ARGS.named' "${joplin_detect_file}" > detect-next.json
 cp detect-next.json "${joplin_detect_file}"
+
+echo "== detect file"
+cat "${joplin_detect_file}"
+
+echo "== digest file"
+cat "${joplin_digest_file}"
