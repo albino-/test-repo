@@ -33,19 +33,19 @@ jobs:
         with:
           node-version: '20'
 
-      - name: echo path
-        run: ./echo-path.sh
+      #- name: echo path
+      #  run: ./echo-path.sh
 
-      - name: sudo echo path
-        run: sudo ./echo-path.sh
+      #- name: sudo echo path
+      #  run: sudo ./echo-path.sh
 
       #- name: modify path
       #  run: sudo echo "/opt/hostedtoolcache/node/20.9.0/x64/bin/" >> $GITHUB_PATH
       #  shell: bash
 
-      - name: step1
-        #run: sudo ./step1-v2.sh
-        run: sudo env "PATH=$PATH" ./step1-v2.sh
+      #- name: step1
+      #  #run: sudo ./step1-v2.sh
+      #  run: sudo env "PATH=$PATH" ./step1-v2.sh
 
       #- name: step2
       #  run: ./step2-v2.sh
