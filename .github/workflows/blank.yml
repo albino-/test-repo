@@ -33,6 +33,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: build joplin server
+        run: build-joplin-server.sh
+
       #- name: echo path
       #  run: ./echo-path.sh
 
@@ -50,8 +53,6 @@ jobs:
       #- name: step2
       #  run: ./step2-v2.sh
 
-      - name: step2
-        run: ./step2-build-joplin.sh
 
       #- name: Setup tmate session
       #  uses: mxschmitt/action-tmate@v3
