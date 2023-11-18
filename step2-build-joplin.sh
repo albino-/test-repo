@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "== PATH"
+echo $PATH
+
 set -u -e
 
 # example dl file: https://github.com/laurent22/joplin/archive/refs/tags/v2.12.19.tar.gz
