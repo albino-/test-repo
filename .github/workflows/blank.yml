@@ -33,14 +33,14 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+
       - name: echo path
         run: ./echo-path.sh
 
       - name: sudo echo path
         run: sudo ./echo-path.sh
-
-      #- name: Setup tmate session
-      #  uses: mxschmitt/action-tmate@v3
 
       - name: modify path
         run: sudo echo "/opt/hostedtoolcache/node/20.9.0/x64/bin/" >> $GITHUB_PATH
