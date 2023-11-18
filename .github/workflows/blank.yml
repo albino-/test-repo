@@ -38,6 +38,7 @@ jobs:
 
       - name: modify path
         run: echo "/opt/hostedtoolcache/node/20.9.0/x64/bin/" >> $GITHUB_PATH
+        shell: bash
 
       - name: step1
         run: sudo ./step1-v2.sh
