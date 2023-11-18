@@ -47,8 +47,11 @@ jobs:
         #run: sudo ./step1-v2.sh
         run: sudo env "PATH=$PATH" ./step1-v2.sh
 
+      #- name: step2
+      #  run: ./step2-v2.sh
+
       - name: step2
-        run: ./step2-v2.sh
+        run: ./step2-build-joplin.sh
 
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
