@@ -33,6 +33,12 @@ jobs:
         with:
           node-version: '20'
 
+      - name: echo path
+        run: ./echo-path.sh
+
+      - name: sudo echo path
+        run: sudo ./echo-path.sh
+
       #- name: Setup tmate session
       #  uses: mxschmitt/action-tmate@v3
 
