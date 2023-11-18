@@ -1,8 +1,5 @@
 #!/bin/bash
 
-echo "== PATH"
-echo $PATH
-
 set -u -e
 
 # example dl file: https://github.com/laurent22/joplin/archive/refs/tags/v2.12.19.tar.gz
@@ -52,8 +49,8 @@ cd ../build
 echo "== Build joplin using yarn"
 #yarn set version 3.6.0
 #yarn set version '3.x'
-yarn --version
-yarn config set --home enableTelemetry 0
-BUILD_SEQUENCIAL=1 yarn install --immutable --inline-builds \
-    && yarn cache clean \
-    && rm -rf .yarn/berry
+#yarn --version
+#yarn config set --home enableTelemetry 0
+#BUILD_SEQUENCIAL=1 yarn install --immutable --inline-builds \
+#    && yarn cache clean \
+#    && rm -rf .yarn/berry
