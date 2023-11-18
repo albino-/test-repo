@@ -46,11 +46,14 @@ cp --parents -r "packages/server" ../build/
 
 cd ../build
 
+echo "== env"
+env
+
 echo "== Build joplin using yarn"
 #yarn set version 3.6.0
 #yarn set version '3.x'
 #yarn --version
-env -i yarn config set --home enableTelemetry 0
-env -i BUILD_SEQUENCIAL=1 yarn install --inline-builds \
+env -i "PATH=${PATH}" yarn config set --home enableTelemetry 0
+env -i "PATH=${PATH}" BUILD_SEQUENCIAL=1 yarn install --inline-builds \
     && yarn cache clean \
     && rm -rf .yarn/berry

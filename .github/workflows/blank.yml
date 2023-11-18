@@ -53,5 +53,5 @@ jobs:
       - name: step2
         run: ./step2-build-joplin.sh
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+      #- name: Setup tmate session
+      #  uses: mxschmitt/action-tmate@v3
