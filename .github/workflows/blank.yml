@@ -34,7 +34,7 @@ jobs:
           node-version: '20'
 
       - name: build joplin server
-        run: build-joplin-server.sh
+        run: ./build-joplin-server.sh
 
       #- name: echo path
       #  run: ./echo-path.sh
