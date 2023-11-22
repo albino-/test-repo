@@ -21,6 +21,7 @@ joplin_repo=$(ls -1)
 cd "${joplin_repo}"
 ../../detect-dockerfile-changes.py --joplin-ver "${joplin_release}" --docker-file "Dockerfile.server" --json-file "../../meta.json"
 if [[ "${?}" -ne 0 ]]; then
+	echo "joplin version already detected or Dockerfile checksum did not match."
 	exit 1
 fi
 cd -
