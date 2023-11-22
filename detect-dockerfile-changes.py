@@ -59,7 +59,7 @@ def main():
 	if not worked:
 		print("Unable to compute sha checksum for: %s" % fp)
 
-	dt = datetime.now().strftime()
+	dt = datetime.now().strftime('%Y%m%d_%H%M%S')
 	json_obj = meta_json_read(args.json_file)
 	if args.joplin_ver in json_obj:
 		print("joplin version: %s has already been processed... return code will be %d" % (args.joplin_ver, VERSION_ALREADY_FOUND_EXIT))
