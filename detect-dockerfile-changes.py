@@ -7,7 +7,7 @@ import json
 import argparse
 import subprocess
 from os import path
-from datetiem import datetime
+from datetime import datetime
 
 SHA_SUM = '/usr/bin/sha384sum'
 VERSION_ALREADY_FOUND_EXIT = 100 #return code when joplin version has already occurred
