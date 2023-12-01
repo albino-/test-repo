@@ -71,3 +71,4 @@ cd ..
 jsartifact="${jsbuild}.tar.xz"
 echo "== Produce joplin artifact: ${jsartifact}"
 tar cfJ "${jsartifact}" "${jsbuild}"
+ls -lh
