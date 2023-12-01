@@ -27,32 +27,33 @@ fi
 cd -
 
 #follow docker file as closely as possible from upstream
-mkdir build
+jsbuild="southof-joplin-server-${joplin_release}"
+mkdir "${jsbuild}"
+
 echo "== Copy in all the files from the source tar.gz"
 cd "${joplin_repo}"
-cp --parents -r ".yarn/plugins" ../build/
-cp --parents -r ".yarn/releases" ../build/
-cp --parents -r ".yarn/patches" ../build/
-cp package.json ../build/
-cp .yarnrc.yml ../build/
-cp yarn.lock ../build/
-cp gulpfile.js ../build/
-cp tsconfig.json ../build/
-cp --parents -r "packages/turndown" ../build/
-cp --parents -r "packages/turndown-plugin-gfm" ../build/
-cp --parents -r "packages/fork-htmlparser2" ../build/
-install -D -t ../build/server packages/server/package*.json
-cp --parents -r "packages/fork-sax" ../build/
-cp --parents -r "packages/fork-uslug" ../build/
-cp --parents -r "packages/htmlpack" ../build/
-cp --parents -r "packages/renderer" ../build/
-cp --parents -r "packages/tools" ../build/
-cp --parents -r "packages/utils" ../build/
-cp --parents -r "packages/lib" ../build/
-cp --parents -r "packages/server" ../build/
+cp --parents -r ".yarn/plugins" "../${jsbuild}/"
+cp --parents -r ".yarn/releases" "../${jsbuild}/"
+cp --parents -r ".yarn/patches" "../${jsbuild}/"
+cp package.json "../${jsbuild}/"
+cp .yarnrc.yml "../${jsbuild}/"
+cp yarn.lock "../${jsbuild}/"
+cp gulpfile.js "../${jsbuild}/"
+cp tsconfig.json "../${jsbuild}/"
+cp --parents -r "packages/turndown" "../${jsbuild}/"
+cp --parents -r "packages/turndown-plugin-gfm" "../${jsbuild}/"
+cp --parents -r "packages/fork-htmlparser2" "../${jsbuild}/"
+install -D -t "../${jsbuild}/server" packages/server/package*.json
+cp --parents -r "packages/fork-sax" "../${jsbuild}/"
+cp --parents -r "packages/fork-uslug" "../${jsbuild}/"
+cp --parents -r "packages/htmlpack" "../${jsbuild}/"
+cp --parents -r "packages/renderer" "../${jsbuild}/"
+cp --parents -r "packages/tools" "../${jsbuild}/"
+cp --parents -r "packages/utils" "../${jsbuild}/"
+cp --parents -r "packages/lib" "../${jsbuild}/"
+cp --parents -r "packages/server" "../${jsbuild}/"
 
-cd ../build
-du -sh
+cd "../${jsbuild}/"
 
 # - Why use the env command here?
 # - Because the github runner injecting the CI variable
@@ -60,10 +61,12 @@ du -sh
 #   is used to make 'yarn install' act like --immutable is
 #   being passed, but we don't want that behavior here.
 #   see: https://github.com/yarnpkg/berry/discussions/3486#discussioncomment-1379344
-echo "== Build joplin using yarn"
+echo "== Build joplin ${joplin_release} using yarn"
 env -i "PATH=${PATH}" yarn config set --home enableTelemetry 0
 env -i "PATH=${PATH}" BUILD_SEQUENCIAL=1 yarn install --inline-builds \
     && yarn cache clean \
     && rm -rf .yarn/berry
 
-du -sh
+cd ..
+tar czf "${jsbuild}.tar.gz" "${jsbuild}"
+ls -lh
