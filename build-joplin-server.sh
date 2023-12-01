@@ -68,5 +68,5 @@ env -i "PATH=${PATH}" BUILD_SEQUENCIAL=1 yarn install --inline-builds \
     && rm -rf .yarn/berry
 
 cd ..
-tar czf "${jsbuild}.tar.gz" "${jsbuild}"
+tar cfJ "${jsbuild}.tar.xz" "${jsbuild}"
 ls -lh
