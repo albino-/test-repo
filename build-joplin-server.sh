@@ -66,7 +66,8 @@ env -i "PATH=${PATH}" yarn config set --home enableTelemetry 0
 env -i "PATH=${PATH}" BUILD_SEQUENCIAL=1 yarn install --inline-builds \
     && yarn cache clean \
     && rm -rf .yarn/berry
-
 cd ..
-tar cfJ "${jsbuild}.tar.xz" "${jsbuild}"
-ls -lh
+
+jsartifact="${jsbuild}.tar.xz"
+echo "== Produce joplin artifact: ${jsartifact}"
+tar cfJ "${jsartifact}" "${jsbuild}"
