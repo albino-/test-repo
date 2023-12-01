@@ -52,6 +52,7 @@ cp --parents -r "packages/lib" ../build/
 cp --parents -r "packages/server" ../build/
 
 cd ../build
+du -sh
 
 # - Why use the env command here?
 # - Because the github runner injecting the CI variable
@@ -64,3 +65,5 @@ env -i "PATH=${PATH}" yarn config set --home enableTelemetry 0
 env -i "PATH=${PATH}" BUILD_SEQUENCIAL=1 yarn install --inline-builds \
     && yarn cache clean \
     && rm -rf .yarn/berry
+
+du -sh

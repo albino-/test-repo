@@ -48,7 +48,6 @@ def meta_json_initialize(file_path):
 
 def main():
 	args = parse_arguments()
-	print(dir(args))
 	if not path.isfile(args.docker_file):
 		print("joplin server Dockerfile file path: %s doesn't exist" % args.docker_file)
 
