@@ -39,10 +39,17 @@ jobs:
         run: ./build-joplin-server.sh
 
       - name: push tag
-        uses: anothrNick/github-tag-action@1.67.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CUSTOM_TAG: ${{ env.joplin_ver }}
+        uses: EndBug/latest-tag@latest
+        with:
+          ref: ${{ env.joplin_ver }}
+          description: southof-joplin-server-${{ env.joplin_ver }}
+
+      #- name: push tag
+      #  uses: anothrNick/github-tag-action@1.67.0
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #    CUSTOM_TAG: ${{ env.joplin_ver }}
+      #    WITH_V: false
 
       #- name: Setup tmate session
       #  uses: mxschmitt/action-tmate@v3
