@@ -47,8 +47,8 @@ jobs:
         run: |
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "githubactions@noreply.github.com"
-          git tag -a ${{ env.joplin_ver }} -m "southof-joplin-server-${{ env.joplin_ver }}"
-          git push
+          git tag -a "${{ env.joplin_ver }}" -m "southof-joplin-server-${{ env.joplin_ver }}"
+          git push origin "${{ env.joplin_ver }}"
 
       #- name: push tag
       #  uses: EndBug/latest-tag@latest
