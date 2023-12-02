@@ -22,6 +22,8 @@ jobs:
   build-joplin-release:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    env:
+      CI_COMMIT_AUTHOR: ${{ github.event.repository.name }} Continuous Integration
 
     steps:
       - name: checkout
@@ -39,10 +41,17 @@ jobs:
         run: ./build-joplin-server.sh
 
       - name: push tag
-        uses: EndBug/latest-tag@latest
-        with:
-          ref: ${{ env.joplin_ver }}
-          description: southof-joplin-server-${{ env.joplin_ver }}
+        run |
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git config --global user.email "githubactions@noreply.github.com"
+          git tag -a ${{ env.joplin_ver }} -m "southof-joplin-server-${{ env.joplin_ver }}"
+          git push
+
+      #- name: push tag
+      #  uses: EndBug/latest-tag@latest
+      #  with:
+      #    ref: ${{ env.joplin_ver }}
+      #    description: southof-joplin-server-${{ env.joplin_ver }}
 
       #- name: push tag
       #  uses: anothrNick/github-tag-action@1.67.0
