@@ -70,8 +70,7 @@ cd ..
 
 jsartifact="${jsbuild}.tar.xz"
 echo "== Produce joplin artifact: ${jsartifact}"
-tar cfJ "${jsartifact}" "${jsbuild}"
-ls -lh
+#tar cfJ "${jsartifact}" "${jsbuild}"
 
 echo "== Expose joplin version to other github action steps"
 echo "joplin_ver=${joplin_release}" >> "$GITHUB_ENV"
