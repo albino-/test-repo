@@ -1,0 +1,44 @@
+name: ci-on-tag
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    tags:
+      - "*.*.*"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: .
+
+jobs:
+  build-joplin-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: setup nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: pre-reqs
+        run: sudo ./pre-reqs.sh
+
+      - name: build joplin server
+        run: ./build-joplin-server.sh
+
+      - name: release
+        uses: softprops/action-gh-release@v1
+        with:
+          fail_on_unmatched_files: true
+          files: |
+            southof-joplin-server-*.tar.xz
+
+      #- name: Setup tmate session
+      #  uses: mxschmitt/action-tmate@v3
